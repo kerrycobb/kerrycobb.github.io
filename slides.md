@@ -85,7 +85,7 @@ fastq-dump --split-files <accession>.sra
 
 
 ## Command Line Data Download
-- fastq-dump in the SRA Toolkit might be too slow for some use cases
+- `fastq-dump` in the SRA Toolkit might be too slow for some use cases
 - Aspera Connect is a faster alternative
   - It's a little harder to use
 
