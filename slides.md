@@ -63,9 +63,9 @@ esearch -db sra -query "Placozoan [organism]" | \
 efetch --format runinfo > sra_query.csv
 ```
 
-Get the urls:
+Get the accession numbers:
 ```
-awk -F "," '{print $10}' sra_query.csv
+awk -F "," '{print $25}' sra_query.csv
 ```
 
 
@@ -75,6 +75,13 @@ Using SRA Toolkit
 ```
 fastq-dump --split-files <accession>.sra
 ```
+
+
+
+## Script Data Download
+- SRA Toolkit might be too slow for some use cases
+- Aspera Connect is a faster alternative
+  - It's a little harder to use
 
 
 
@@ -120,7 +127,7 @@ fastq-dump --split-files <file-path>.sra
 - Repositories for items associated with data
   - DRYAD
   - Github
-  - Zinoto
+  - Zenoto
   - Open Science Framework
   - Fig Share
 - Several of these provide a Digital Object Identifier (DOI) link
