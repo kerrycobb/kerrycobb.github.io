@@ -60,6 +60,8 @@
 - Most data cannot be downloaded from SRA website
 - Command line tools are needed
 
+
+
 ## Command Line Data Browsing
 Use Entrez Direct to fetch run info:
 ```
