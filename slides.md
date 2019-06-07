@@ -2,14 +2,14 @@
 
 
 
-### What to do with sequence data when you're done?
+## What to do with sequence data when you're done?
 - It is difficult to safely store your data long term
 - Your raw data might have value to others
 - Tax payers or generous donors might have funded your research
 
 
 
-### International Nucleotide Sequence Database Collaboration (INSDC)
+## International Nucleotide Sequence Database Collaboration (INSDC)
 - Includes:
   - National Center For Biotechnology (NCBI)
   - European Bioinformatics Institute (EBI)
@@ -18,14 +18,14 @@
 
 
 
-### Upload Your Data!
+## Upload Your Data!
 - Don't risk losing it by trying to store it yourself
 - Many journals and funding agencies require it
 - Owe it to society for supporting research
 
 
 
-### Sequence Read Archive (SRA)
+## Sequence Read Archive (SRA)
 - Formerly the Short Read Archive
   - Changed in anticipation of longer reads
 - Repository for high-throughput sequence data
@@ -38,14 +38,14 @@
 
 
 
-### Download Data
+## Download Data
 - Don't have a grant for sequencing?
 - Can the question you have be addressed with existing data?
 - Will existing data help with analyzing or augmenting data you collected?
 
 
 
-### Existing Data
+## Existing Data
 <img src="https://www.ncbi.nlm.nih.gov/Traces/sra/i/g.png" alt="SRA Database growth" style="max-height: 500px;" />
 
 
@@ -56,28 +56,71 @@
 
 
 
-### Script Data Browsing
-Use Entrez Direct to fetch run info
+## Script Data Browsing
+Use Entrez Direct to fetch run info:
 ```
-esearch -db sra -query " [organism]" | efetch --format runinfo > sra_query.csv
-```
-
-
-
-### Script Data Download
-Use Aspera Connect and SRA Toolkit
-
-Download `.sra` file
-```
-ascp
+esearch -db sra -query "Placozoan [organism]" | \
+efetch --format runinfo > sra_query.csv
 ```
 
-Convert `.sra` to `.fastq`
+Get the urls:
 ```
-fastq-dump --split-files <SRA-FILE>
+awk -F "," '{print $10}' sra_query.csv
 ```
 
 
 
-### Other Databases
-- DRYAD
+## Script Data Download
+Using SRA Toolkit
+```
+fastq-dump --split-files <accession>.sra
+```
+
+
+
+## Script Data Download
+Using Aspera Connect and SRA Toolkit
+
+Download sra file
+```
+ascp \
+  -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \
+  -T \ # Disable encryption
+  -k 1 \ # Permit restart of partial download
+  <accession-url> \
+  <file-name>.sra  
+```
+
+Accession URL looks like this:
+anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR676/SRR6768529/SRR6768529.sra
+
+
+
+## Script Data Download
+Using Aspera Connect and SRA Toolkit
+
+Convert sra to fastq:
+```
+fastq-dump --split-files <file-path>.sra
+```
+
+
+
+### Other Repositories
+- There are many other repositories for more specific types of data:
+  - Expression
+  - Annotations of Protein, RNA, Transposable Element, etc.
+  - Genetic Variants
+  - Metagenomics
+  - Model Organisms
+
+
+
+### Other Repositories
+- Repositories for items associated with data
+  - DRYAD
+  - Github
+  - Zinoto
+  - Open Science Framework
+  - Fig Share
+- Several of these provide a Digital Object Identifier (DOI) link
