@@ -56,7 +56,11 @@
 
 
 
-## Script Data Browsing
+### Browse and Download Available Data
+- Most data cannot be downloaded from SRA website
+- Command line tools are needed
+
+## Command Line Data Browsing
 Use Entrez Direct to fetch run info:
 ```
 esearch -db sra -query "Placozoan [organism]" | \
@@ -70,7 +74,7 @@ awk -F "," '{print $25}' sra_query.csv
 
 
 
-## Script Data Download
+## Command Line Data Download
 Using SRA Toolkit
 ```
 fastq-dump --split-files <accession>.sra
@@ -78,14 +82,14 @@ fastq-dump --split-files <accession>.sra
 
 
 
-## Script Data Download
+## Command Line Data Download
 - SRA Toolkit might be too slow for some use cases
 - Aspera Connect is a faster alternative
   - It's a little harder to use
 
 
 
-## Script Data Download
+## Command Line Data Download
 Using Aspera Connect and SRA Toolkit
 
 Download sra file
@@ -103,7 +107,7 @@ anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR676/SRR6768
 
 
 
-## Script Data Download
+## Command Line Data Download
 Using Aspera Connect and SRA Toolkit
 
 Convert sra to fastq:
@@ -124,7 +128,7 @@ fastq-dump --split-files <file-path>.sra
 
 
 ### Other Repositories
-- Repositories for items associated with data
+- Repositories for items associated with sequence data
   - DRYAD
   - Github
   - Zenoto
