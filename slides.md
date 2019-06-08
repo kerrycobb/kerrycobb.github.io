@@ -2,14 +2,14 @@
 
 
 
-## What to do with sequence data when you're done?
+### What to do with sequence data when you're done?
 - It is difficult to safely store your data long term
-- Your raw data might have value to others
+- Your data might have value to others
 - Tax payers or generous donors might have funded your research
 
 
 
-## International Nucleotide Sequence Database Collaboration (INSDC)
+### International Nucleotide Sequence Database Collaboration (INSDC)
 - Includes:
   - National Center For Biotechnology (NCBI)
   - European Bioinformatics Institute (EBI)
@@ -18,14 +18,14 @@
 
 
 
-## Upload Your Data!
+### Upload Your Data!
 - Don't risk losing it by trying to store it yourself
 - Many journals and funding agencies require it
 - Owe it to society for supporting research
 
 
 
-## Sequence Read Archive (SRA)
+### Sequence Read Archive (SRA)
 - Formerly the Short Read Archive
   - Changed in anticipation of longer reads
 - Repository for high-throughput sequence data
@@ -38,14 +38,14 @@
 
 
 
-## Download Data
+### Download Data
 - Don't have a grant for sequencing?
 - Can the question you have be addressed with existing data?
 - Will existing data help with analyzing or augmenting data you collected?
 
 
 
-## Existing Data
+### Existing Data
 <img src="https://www.ncbi.nlm.nih.gov/Traces/sra/i/g.png" alt="SRA Database growth" style="max-height: 500px;" />
 
 
@@ -62,7 +62,7 @@
 
 
 
-## Data Browsing From Command Line
+### Data Browsing From Command Line
 Use Entrez Direct to fetch run info:
 ```
 esearch -db sra -query "Placozoan [organism]" | \
@@ -76,7 +76,7 @@ awk -F "," '{print $25}' sra_query.csv
 
 
 
-## Data Download From Command Line
+### Data Download From Command Line
 Using SRA Toolkit:
 ```
 fastq-dump --split-files <accession>.sra
@@ -84,14 +84,14 @@ fastq-dump --split-files <accession>.sra
 
 
 
-## Data Download From Command Line
+### Data Download From Command Line
 - `fastq-dump` in the SRA Toolkit might be too slow for some use cases
 - Aspera Connect is a faster alternative
   - It's a little harder to use
 
 
 
-## Data Download From Command Line
+### Data Download From Command Line
 Using Aspera Connect and SRA Toolkit
 
 Download sra file
@@ -109,7 +109,7 @@ anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR676/SRR6768
 
 
 
-## Data Download From Command Line
+### Data Download From Command Line
 Using Aspera Connect and SRA Toolkit
 
 Convert sra to fastq:
