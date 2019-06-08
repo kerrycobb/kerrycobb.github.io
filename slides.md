@@ -62,7 +62,7 @@
 
 
 
-## Command Line Data Browsing
+## Data Browsing From Command Line
 Use Entrez Direct to fetch run info:
 ```
 esearch -db sra -query "Placozoan [organism]" | \
@@ -76,22 +76,22 @@ awk -F "," '{print $25}' sra_query.csv
 
 
 
-## Command Line Data Download
-Using SRA Toolkit
+## Data Download From Command Line
+Using SRA Toolkit:
 ```
 fastq-dump --split-files <accession>.sra
 ```
 
 
 
-## Command Line Data Download
+## Data Download From Command Line
 - `fastq-dump` in the SRA Toolkit might be too slow for some use cases
 - Aspera Connect is a faster alternative
   - It's a little harder to use
 
 
 
-## Command Line Data Download
+## Data Download From Command Line
 Using Aspera Connect and SRA Toolkit
 
 Download sra file
@@ -109,7 +109,7 @@ anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR676/SRR6768
 
 
 
-## Command Line Data Download
+## Data Download From Command Line
 Using Aspera Connect and SRA Toolkit
 
 Convert sra to fastq:
