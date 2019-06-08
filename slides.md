@@ -94,7 +94,7 @@ fastq-dump --split-files <accession>.sra
 ### Data Download From Command Line
 Using Aspera Connect and SRA Toolkit
 
-Download sra file
+Download sra file:
 ```
 ascp \
   -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \
